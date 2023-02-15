@@ -26,7 +26,6 @@ public class HelloServlet extends HttpServlet {
     }
 
     public void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
         Collection<EmployeeEntity> employeesFromSessionBean = employeeSessionBean.getAllEmployees();
 
         for (EmployeeEntity employee: employeesFromSessionBean) {

@@ -1,13 +1,14 @@
 version: '3.1'
 services:
     mysql:
-        image: mysql:5.7
+        image: mysql:latest
         ports:
-            - "33061:3306"
+            - 3306:3306
         command: --init-file /data/application/init.sql
         volumes:
             - ./init.sql:/data/application/init.sql
         environment:
-            MYSQL_ROOT_PASSWORD: secret
+            MYSQL_DATABASE: employeedb
             MYSQL_ROOT_USER: root
-            MYSQL_DATABASE: interns
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_ROOT_HOST: localhost

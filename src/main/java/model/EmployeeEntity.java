@@ -3,7 +3,7 @@ package model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "employee", schema = "mysqlst2apr")
+@Table(name = "EMPLOYEE", schema = "employeedb")
 public class EmployeeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
