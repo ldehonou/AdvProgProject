@@ -1,6 +1,6 @@
 # AdvProgProject
 
-##Docker compose
+## Docker compose
 
 1. docker-compose up
 2. Inside mysql container :
