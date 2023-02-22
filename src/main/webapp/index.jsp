@@ -12,7 +12,7 @@
         <div class="card">
             <div class="card-body">
                 <h3 class="card-title text-center mb-5">Authentication</h3>
-                <form action="hello-servlet" method="post">
+                <form action="login" method="post">
                     <div class="form-group row">
                         <label  class="col-sm-2 col-form-label">Identifiant</label>
                         <div class="col-sm-7">
@@ -35,7 +35,6 @@
             </div>
         </div>
     </div>
-    <a href="hello-servlet">Hello Servlet</a>
 
 </div>
 

@@ -5,7 +5,6 @@
              version="3.0">
     <persistence-unit name="default">
 
-        <class>model.EmployeeEntity</class>
         <class>model.entity.CompanyEntity</class>
         <class>model.entity.InternEntity</class>
         <class>model.entity.InternshipEntity</class>
