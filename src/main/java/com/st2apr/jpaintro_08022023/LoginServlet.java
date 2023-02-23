@@ -7,30 +7,28 @@ import jakarta.ejb.EJB;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import model.EmployeeEntity;
-import model.EmployeeSessionBean;
+import model.bean.TutorBean;
+import model.entity.TutorEntity;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
-public class HelloServlet extends HttpServlet {
+@WebServlet(name = "loginServlet", value = "/login")
+public class LoginServlet extends HttpServlet {
 
     @EJB
-    EmployeeSessionBean employeeSessionBean;
+    TutorBean tutorBean;
 
     public void init() {}
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        //processRequest(request, response);
-        Collection<EmployeeEntity> employeesFromSessionBean = employeeSessionBean.getAllEmployees();
+        Collection<TutorEntity> tutors = tutorBean.getAllTutors();
 
-        for (EmployeeEntity employee: employeesFromSessionBean) {
-            System.out.println("NAME : "+employee.getLastname());
+        for (TutorEntity tutor: tutors) {
+            System.out.println("NAME : "+ tutor.getEmail());
         }
     }
 
     @Override
     public void doPost (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        //processRequest(request, response);
         String identifiant = request.getParameter("identifiant");
         String password = request.getParameter("password");
         System.out.println("ID" + identifiant);
@@ -38,10 +36,6 @@ public class HelloServlet extends HttpServlet {
 
         request.setAttribute("message", "Hello " + identifiant + " !");
         request.getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
-    }
-
-    public void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
     }
 
     public void destroy() {
