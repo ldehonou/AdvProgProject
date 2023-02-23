@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
         System.out.println("Pass " + password);
 
         request.setAttribute("identifiant", identifiant);
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(true);
 
         session.setAttribute("identifiant", identifiant);
         response.sendRedirect(request.getContextPath() + "/home");
