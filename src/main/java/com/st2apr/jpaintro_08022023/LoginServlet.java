@@ -34,8 +34,11 @@ public class LoginServlet extends HttpServlet {
         System.out.println("ID" + identifiant);
         System.out.println("Pass " + password);
 
-        request.setAttribute("message", "Hello " + identifiant + " !");
-        request.getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+        request.setAttribute("identifiant", identifiant);
+        HttpSession session = request.getSession();
+
+        session.setAttribute("identifiant", identifiant);
+        response.sendRedirect(request.getContextPath() + "/home");
     }
 
     public void destroy() {
