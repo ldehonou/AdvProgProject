@@ -2,6 +2,7 @@ package model.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -12,6 +13,7 @@ public class CompanyEntity {
     private String address;
     private String postalcode;
     private String city;
+    private Collection<InternshipEntity> internshipsById;
 
     @Id
     @Column(name = "ID", nullable = false)
@@ -74,5 +76,14 @@ public class CompanyEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, address, postalcode, city);
+    }
+
+    @OneToMany(mappedBy = "companyByIdCompany")
+    public Collection<InternshipEntity> getInternshipsById() {
+        return internshipsById;
+    }
+
+    public void setInternshipsById(Collection<InternshipEntity> internshipsById) {
+        this.internshipsById = internshipsById;
     }
 }

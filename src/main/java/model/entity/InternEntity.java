@@ -2,6 +2,7 @@ package model.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -15,6 +16,7 @@ public class InternEntity {
     private String postalcode;
     private String city;
     private String email;
+    private Collection<MakeInternshipEntity> makeInternshipsById;
 
     @Id
     @Column(name = "ID", nullable = false)
@@ -107,5 +109,14 @@ public class InternEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, lastname, firstname, phone, address, postalcode, city, email);
+    }
+
+    @OneToMany(mappedBy = "internByIdIntern")
+    public Collection<MakeInternshipEntity> getMakeInternshipsById() {
+        return makeInternshipsById;
+    }
+
+    public void setMakeInternshipsById(Collection<MakeInternshipEntity> makeInternshipsById) {
+        this.makeInternshipsById = makeInternshipsById;
     }
 }

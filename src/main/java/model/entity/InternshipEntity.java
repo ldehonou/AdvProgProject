@@ -3,6 +3,7 @@ package model.entity;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -18,6 +19,8 @@ public class InternshipEntity {
     private Byte defense;
     private Date startedDate;
     private Date endedDate;
+    private CompanyEntity companyByIdCompany;
+    private Collection<MakeInternshipEntity> makeInternshipsById;
 
     @Id
     @Column(name = "ID", nullable = false)
@@ -130,5 +133,24 @@ public class InternshipEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, mission, cdc, visitSheet, evalSheet, webSurvey, report, defense, startedDate, endedDate);
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "ID_COMPANY", referencedColumnName = "ID", nullable = false)
+    public CompanyEntity getCompanyByIdCompany() {
+        return companyByIdCompany;
+    }
+
+    public void setCompanyByIdCompany(CompanyEntity companyByIdCompany) {
+        this.companyByIdCompany = companyByIdCompany;
+    }
+
+    @OneToMany(mappedBy = "internshipByIdInternship")
+    public Collection<MakeInternshipEntity> getMakeInternshipsById() {
+        return makeInternshipsById;
+    }
+
+    public void setMakeInternshipsById(Collection<MakeInternshipEntity> makeInternshipsById) {
+        this.makeInternshipsById = makeInternshipsById;
     }
 }

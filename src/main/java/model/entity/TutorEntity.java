@@ -2,6 +2,7 @@ package model.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -12,6 +13,7 @@ public class TutorEntity {
     private String password;
     private String firstname;
     private String lastname;
+    private Collection<MakeInternshipEntity> makeInternshipsById;
 
     @Id
     @Column(name = "ID", nullable = false)
@@ -74,5 +76,14 @@ public class TutorEntity {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
+    }
+
+    @OneToMany(mappedBy = "tutorByIdTutor")
+    public Collection<MakeInternshipEntity> getMakeInternshipsById() {
+        return makeInternshipsById;
+    }
+
+    public void setMakeInternshipsById(Collection<MakeInternshipEntity> makeInternshipsById) {
+        this.makeInternshipsById = makeInternshipsById;
     }
 }

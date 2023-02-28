@@ -10,6 +10,9 @@ public class MakeInternshipEntity {
     private int id;
     private String noteTech;
     private String noteCom;
+    private InternEntity internByIdIntern;
+    private TutorEntity tutorByIdTutor;
+    private InternshipEntity internshipByIdInternship;
 
     @Id
     @Column(name = "ID", nullable = false)
@@ -52,5 +55,35 @@ public class MakeInternshipEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, noteTech, noteCom);
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "ID_INTERN", referencedColumnName = "ID", nullable = false)
+    public InternEntity getInternByIdIntern() {
+        return internByIdIntern;
+    }
+
+    public void setInternByIdIntern(InternEntity internByIdIntern) {
+        this.internByIdIntern = internByIdIntern;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "ID_TUTOR", referencedColumnName = "ID", nullable = false)
+    public TutorEntity getTutorByIdTutor() {
+        return tutorByIdTutor;
+    }
+
+    public void setTutorByIdTutor(TutorEntity tutorByIdTutor) {
+        this.tutorByIdTutor = tutorByIdTutor;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "ID_INTERNSHIP", referencedColumnName = "ID", nullable = false)
+    public InternshipEntity getInternshipByIdInternship() {
+        return internshipByIdInternship;
+    }
+
+    public void setInternshipByIdInternship(InternshipEntity internshipByIdInternship) {
+        this.internshipByIdInternship = internshipByIdInternship;
     }
 }
