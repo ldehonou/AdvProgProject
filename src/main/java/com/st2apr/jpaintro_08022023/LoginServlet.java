@@ -24,12 +24,7 @@ public class LoginServlet extends HttpServlet {
         String identifiant = request.getParameter("identifiant");
         String password = request.getParameter("password");
 
-<<<<<<< Updated upstream
         request.setAttribute("message", "Hello " + identifiant + " !");
-        request.getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
-=======
-        System.out.println(identifiant);
-        System.out.println(password);
 
         TutorEntity tutor = null;
         try {
@@ -55,7 +50,6 @@ public class LoginServlet extends HttpServlet {
             System.out.println("Fail Redirect");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
->>>>>>> Stashed changes
     }
 
     public void destroy() {
