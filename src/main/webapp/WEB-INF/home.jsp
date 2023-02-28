@@ -91,7 +91,7 @@
         </table>
 
         <div class="text-center">
-            <button class="btn btn-primary">Ajouter</button>
+            <a href="createIntern" class="btn btn-primary">Ajouter</a>
             <button class="btn btn-warning">Valider</button>
         </div>
 
