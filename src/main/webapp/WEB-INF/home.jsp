@@ -95,8 +95,6 @@
             <button class="btn btn-warning">Valider</button>
         </div>
 
-
-
     </div>
 
 
