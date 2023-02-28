@@ -2,6 +2,9 @@ package model.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
+import java.util.Objects;
+
 @Entity
 @Table(name = "TUTOR", schema = "tutordb", catalog = "")
 public class TutorEntity {
@@ -10,6 +13,7 @@ public class TutorEntity {
     private String lastname;
     private String email;
     private String password;
+    private Collection<InternshipEntity> internshipsById;
 
     @Id
     @Column(name = "ID", nullable = false)
@@ -65,25 +69,21 @@ public class TutorEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         TutorEntity that = (TutorEntity) o;
-
-        if (id != that.id) return false;
-        if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
-        if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (password != null ? !password.equals(that.password) : that.password != null) return false;
-
-        return true;
+        return id == that.id && Objects.equals(firstname, that.firstname) && Objects.equals(lastname, that.lastname) && Objects.equals(email, that.email) && Objects.equals(password, that.password);
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
-        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
-        return result;
+        return Objects.hash(id, firstname, lastname, email, password);
+    }
+
+    @OneToMany(mappedBy = "tutorByIdTutor")
+    public Collection<InternshipEntity> getInternshipsById() {
+        return internshipsById;
+    }
+
+    public void setInternshipsById(Collection<InternshipEntity> internshipsById) {
+        this.internshipsById = internshipsById;
     }
 }

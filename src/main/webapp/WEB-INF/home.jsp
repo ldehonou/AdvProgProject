@@ -33,7 +33,7 @@
 </nav>
 
     <div class="container-fluid bg-white p-5">
-        <h2 class="text-center mt-2">Hello ${sessionScope.identifiant}</h2>
+        <h2 class="text-center mt-2">Hello ${sessionScope.tutor}</h2>
 
         <table class="table table-striped">
             <thead class="thead-dark">

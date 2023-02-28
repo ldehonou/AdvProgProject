@@ -3,6 +3,7 @@ package model.entity;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name = "INTERNSHIP", schema = "tutordb", catalog = "")
@@ -20,6 +21,7 @@ public class InternshipEntity {
     private Date startedDate;
     private Date endedDate;
     private InternEntity internByIdIntern;
+    private TutorEntity tutorByIdTutor;
     private CompanyEntity companyByIdCompany;
 
     @Id
@@ -146,40 +148,13 @@ public class InternshipEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         InternshipEntity that = (InternshipEntity) o;
-
-        if (id != that.id) return false;
-        if (noteTech != null ? !noteTech.equals(that.noteTech) : that.noteTech != null) return false;
-        if (noteCom != null ? !noteCom.equals(that.noteCom) : that.noteCom != null) return false;
-        if (mission != null ? !mission.equals(that.mission) : that.mission != null) return false;
-        if (cdc != null ? !cdc.equals(that.cdc) : that.cdc != null) return false;
-        if (visitSheet != null ? !visitSheet.equals(that.visitSheet) : that.visitSheet != null) return false;
-        if (evalSheet != null ? !evalSheet.equals(that.evalSheet) : that.evalSheet != null) return false;
-        if (webSurvey != null ? !webSurvey.equals(that.webSurvey) : that.webSurvey != null) return false;
-        if (report != null ? !report.equals(that.report) : that.report != null) return false;
-        if (defense != null ? !defense.equals(that.defense) : that.defense != null) return false;
-        if (startedDate != null ? !startedDate.equals(that.startedDate) : that.startedDate != null) return false;
-        if (endedDate != null ? !endedDate.equals(that.endedDate) : that.endedDate != null) return false;
-
-        return true;
+        return id == that.id && Objects.equals(noteTech, that.noteTech) && Objects.equals(noteCom, that.noteCom) && Objects.equals(mission, that.mission) && Objects.equals(cdc, that.cdc) && Objects.equals(visitSheet, that.visitSheet) && Objects.equals(evalSheet, that.evalSheet) && Objects.equals(webSurvey, that.webSurvey) && Objects.equals(report, that.report) && Objects.equals(defense, that.defense) && Objects.equals(startedDate, that.startedDate) && Objects.equals(endedDate, that.endedDate);
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (noteTech != null ? noteTech.hashCode() : 0);
-        result = 31 * result + (noteCom != null ? noteCom.hashCode() : 0);
-        result = 31 * result + (mission != null ? mission.hashCode() : 0);
-        result = 31 * result + (cdc != null ? cdc.hashCode() : 0);
-        result = 31 * result + (visitSheet != null ? visitSheet.hashCode() : 0);
-        result = 31 * result + (evalSheet != null ? evalSheet.hashCode() : 0);
-        result = 31 * result + (webSurvey != null ? webSurvey.hashCode() : 0);
-        result = 31 * result + (report != null ? report.hashCode() : 0);
-        result = 31 * result + (defense != null ? defense.hashCode() : 0);
-        result = 31 * result + (startedDate != null ? startedDate.hashCode() : 0);
-        result = 31 * result + (endedDate != null ? endedDate.hashCode() : 0);
-        return result;
+        return Objects.hash(id, noteTech, noteCom, mission, cdc, visitSheet, evalSheet, webSurvey, report, defense, startedDate, endedDate);
     }
 
     @ManyToOne
@@ -190,6 +165,16 @@ public class InternshipEntity {
 
     public void setInternByIdIntern(InternEntity internByIdIntern) {
         this.internByIdIntern = internByIdIntern;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "ID_TUTOR", referencedColumnName = "ID", nullable = false)
+    public TutorEntity getTutorByIdTutor() {
+        return tutorByIdTutor;
+    }
+
+    public void setTutorByIdTutor(TutorEntity tutorByIdTutor) {
+        this.tutorByIdTutor = tutorByIdTutor;
     }
 
     @ManyToOne
