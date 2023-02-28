@@ -1,10 +1,8 @@
 package com.st2apr.jpaintro_08022023;
 
 import java.io.*;
-import java.util.Collection;
 
 import jakarta.ejb.EJB;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;

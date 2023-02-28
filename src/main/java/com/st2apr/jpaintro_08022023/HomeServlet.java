@@ -8,7 +8,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import model.bean.TutorBean;
-import model.entity.TutorEntity;
 
 @WebServlet(name = "homeServlet", value = "/home")
 public class HomeServlet extends HttpServlet {
@@ -21,6 +20,18 @@ public class HomeServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession(false);
+        String emailTutor = session.getAttribute("identifiant").toString();
+//        TutorEntity currentTutor = tutorBean.getTutorByEmail(emailTutor);
+//        System.out.println(currentTutor.getLastname());
+//        if(currentTutor != null){
+//            System.out.println("ok");
+//            Collection<MakeInternshipEntity> makeInternships = currentTutor.getMakeInternshipsById();
+//            for (MakeInternshipEntity internship: makeInternships) {
+//                System.out.println(internship.getInternByIdIntern().getEmail());
+//
+//            }
+//        }
+
         request.getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
     }
 

@@ -8,7 +8,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.bean.InternBean;
-import model.bean.TutorBean;
 import model.entity.TutorEntity;
 
 import java.io.IOException;

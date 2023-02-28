@@ -20,6 +20,13 @@ public class TutorBean {
         return query.getResultList();
     }
 
+    public TutorEntity getTutorByEmail(String email){
+        TutorEntity tutor = entityManager.createQuery("SELECT t FROM TutorEntity t WHERE t.email = :email", TutorEntity.class)
+                .setParameter("email", email)
+                .getSingleResult();
+        return tutor;
+    }
+
     public TutorEntity getTutors(String identifiant, String password) {
         TutorEntity tutor = entityManager.createQuery("SELECT t FROM TutorEntity t WHERE t.email = :identifiant AND t.password = :password", TutorEntity.class)
                 .setParameter("identifiant", identifiant)

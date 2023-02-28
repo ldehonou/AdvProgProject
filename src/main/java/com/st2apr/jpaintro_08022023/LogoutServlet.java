@@ -1,14 +1,11 @@
 package com.st2apr.jpaintro_08022023;
 
 import java.io.*;
-import java.util.Collection;
 
 import jakarta.ejb.EJB;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import model.bean.TutorBean;
-import model.entity.TutorEntity;
 
 @WebServlet(name = "logoutServlet", value = "/logout")
 public class LogoutServlet extends HttpServlet {
