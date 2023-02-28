@@ -45,6 +45,7 @@ public class LoginServlet extends HttpServlet {
             System.out.println("Try Redirect");
             HttpSession session = request.getSession(true);
             session.setAttribute("identifiant", tutor.getEmail());
+            session.setAttribute("tutor", tutor.getFirstname() + " " + tutor.getLastname());
             response.sendRedirect(request.getContextPath() + "/home");
 
         } else {

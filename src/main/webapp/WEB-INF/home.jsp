@@ -24,7 +24,7 @@
 
         </ul>
         <div class="form-inline my-2 my-lg-0">
-            <div class="mr-3 font-weight-bold">${sessionScope.identifiant}</div>
+            <div class="mr-3 font-weight-bold">${sessionScope.tutor}</div>
             <div>
                 <a href="logout" class="btn btn-danger">Logout</a>
             </div>
