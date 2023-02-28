@@ -12,12 +12,12 @@ public class InternshipEntity {
     private String noteTech;
     private String noteCom;
     private String mission;
-    private Byte cdc;
-    private Byte visitSheet;
-    private Byte evalSheet;
-    private Byte webSurvey;
-    private Byte report;
-    private Byte defense;
+    private boolean cdc;
+    private boolean visitSheet;
+    private boolean evalSheet;
+    private boolean webSurvey;
+    private boolean report;
+    private boolean defense;
     private Date startedDate;
     private Date endedDate;
     private InternEntity internByIdIntern;
@@ -66,61 +66,61 @@ public class InternshipEntity {
 
     @Basic
     @Column(name = "CDC", nullable = true)
-    public Byte getCdc() {
+    public boolean getCdc() {
         return cdc;
     }
 
-    public void setCdc(Byte cdc) {
+    public void setCdc(boolean cdc) {
         this.cdc = cdc;
     }
 
     @Basic
     @Column(name = "VISIT_SHEET", nullable = true)
-    public Byte getVisitSheet() {
+    public boolean getVisitSheet() {
         return visitSheet;
     }
 
-    public void setVisitSheet(Byte visitSheet) {
+    public void setVisitSheet(boolean visitSheet) {
         this.visitSheet = visitSheet;
     }
 
     @Basic
     @Column(name = "EVAL_SHEET", nullable = true)
-    public Byte getEvalSheet() {
+    public boolean getEvalSheet() {
         return evalSheet;
     }
 
-    public void setEvalSheet(Byte evalSheet) {
+    public void setEvalSheet(boolean evalSheet) {
         this.evalSheet = evalSheet;
     }
 
     @Basic
     @Column(name = "WEB_SURVEY", nullable = true)
-    public Byte getWebSurvey() {
+    public boolean getWebSurvey() {
         return webSurvey;
     }
 
-    public void setWebSurvey(Byte webSurvey) {
+    public void setWebSurvey(boolean webSurvey) {
         this.webSurvey = webSurvey;
     }
 
     @Basic
     @Column(name = "REPORT", nullable = true)
-    public Byte getReport() {
+    public boolean getReport() {
         return report;
     }
 
-    public void setReport(Byte report) {
+    public void setReport(boolean report) {
         this.report = report;
     }
 
     @Basic
     @Column(name = "DEFENSE", nullable = true)
-    public Byte getDefense() {
+    public boolean getDefense() {
         return defense;
     }
 
-    public void setDefense(Byte defense) {
+    public void setDefense(boolean defense) {
         this.defense = defense;
     }
 

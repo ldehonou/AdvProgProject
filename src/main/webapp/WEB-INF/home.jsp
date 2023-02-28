@@ -1,5 +1,6 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>InternManage</title>
@@ -51,42 +52,21 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>23</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>v</td>
-                <td>v</td>
-                <td>v</td>
-                <td>v</td>
-                <td>v</td>
-                <td>v</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>100</td>
-                <td>Mira</td>
-                <td>To</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>v</td>
-                <td>v</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>1</td>
-                <td>Zidane</td>
-                <td>Zidane</td>
-                <td>x</td>
-                <td>v</td>
-                <td>v</td>
-                <td>v</td>
-                <td>x</td>
-                <td>v</td>
-            </tr>
+            <c:forEach items="${interns}" var="intern">
+                <tr>
+                    <th scope="row">${intern.internByIdIntern.id}</th>
+                    <td>${intern.internByIdIntern.id}</td>
+                    <td>${intern.internByIdIntern.lastname}</td>
+                    <td>${intern.internByIdIntern.firstname}</td>
+                    <td>${intern.cdc}</td>
+                    <td>${intern.visitSheet}</td>
+                    <td>${intern.evalSheet}</td>
+                    <td>${intern.webSurvey}</td>
+                    <td>${intern.report}</td>
+                    <td>${intern.defense}</td>
+                </tr>
+            </c:forEach>
+
             </tbody>
         </table>
 
