@@ -24,6 +24,7 @@ public class LoginServlet extends HttpServlet {
         String identifiant = request.getParameter("identifiant");
         String password = request.getParameter("password");
 
+
         request.setAttribute("message", "Hello " + identifiant + " !");
 
         TutorEntity tutor = null;
