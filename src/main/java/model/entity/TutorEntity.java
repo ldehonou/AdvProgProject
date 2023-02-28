@@ -10,6 +10,8 @@ public class TutorEntity {
     private int id;
     private String email;
     private String password;
+    private String firstname;
+    private String lastname;
 
     @Id
     @Column(name = "ID", nullable = false)
@@ -52,5 +54,25 @@ public class TutorEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, email, password);
+    }
+
+    @Basic
+    @Column(name = "FIRSTNAME", nullable = true, length = 25)
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    @Basic
+    @Column(name = "LASTNAME", nullable = true, length = 25)
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 }
