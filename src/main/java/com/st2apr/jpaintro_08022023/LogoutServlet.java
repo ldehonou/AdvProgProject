@@ -22,6 +22,7 @@ public class LogoutServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session=request.getSession(false);
         session.removeAttribute("identifiant");
+        session.removeAttribute("tutor");
         response.sendRedirect(request.getContextPath() + "/");
 
     }
