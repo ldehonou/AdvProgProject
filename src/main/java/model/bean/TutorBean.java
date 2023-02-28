@@ -20,5 +20,12 @@ public class TutorBean {
         return query.getResultList();
     }
 
+    public TutorEntity getTutors(String identifiant, String password) {
+        TutorEntity tutor = entityManager.createQuery("SELECT t FROM TutorEntity t WHERE t.email = :identifiant AND t.password = :password", TutorEntity.class)
+                .setParameter("identifiant", identifiant)
+                .setParameter("password", password)
+                .getSingleResult();
+        return tutor;
+    }
 
 }
