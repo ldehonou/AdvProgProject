@@ -24,6 +24,7 @@ public class TutorBean {
         TutorEntity tutor = entityManager.createQuery("SELECT t FROM TutorEntity t WHERE t.email = :email", TutorEntity.class)
                 .setParameter("email", email)
                 .getSingleResult();
+        entityManager.clear();
         return tutor;
     }
 

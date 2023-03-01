@@ -157,7 +157,7 @@ public class InternshipEntity {
         return Objects.hash(id, noteTech, noteCom, mission, cdc, visitSheet, evalSheet, webSurvey, report, defense, startedDate, endedDate);
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ID_INTERN", referencedColumnName = "ID", nullable = false)
     public InternEntity getInternByIdIntern() {
         return internByIdIntern;
@@ -167,7 +167,7 @@ public class InternshipEntity {
         this.internByIdIntern = internByIdIntern;
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ID_TUTOR", referencedColumnName = "ID", nullable = false)
     public TutorEntity getTutorByIdTutor() {
         return tutorByIdTutor;
@@ -177,7 +177,7 @@ public class InternshipEntity {
         this.tutorByIdTutor = tutorByIdTutor;
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ID_COMPANY", referencedColumnName = "ID", nullable = false)
     public CompanyEntity getCompanyByIdCompany() {
         return companyByIdCompany;

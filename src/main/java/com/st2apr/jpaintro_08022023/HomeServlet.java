@@ -29,10 +29,6 @@ public class HomeServlet extends HttpServlet {
             TutorEntity currentTutor = tutorBean.getTutorByEmail(emailTutor);
             if(currentTutor != null){
                 Collection<InternshipEntity> makeInternships = currentTutor.getInternshipsById();
-                //System.out.println(makeInternships);
-                for (InternshipEntity employee: makeInternships) {
-                    System.out.println("NAME : "+employee.getInternByIdIntern().getEmail());
-                }
                 request.setAttribute("interns", makeInternships);
             }
             request.getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);

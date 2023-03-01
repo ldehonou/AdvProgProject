@@ -15,7 +15,8 @@ public class InternBean {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        public void createIntern(String lastname, String firstname, String phone, String address, String postalcode, String city, String email) {
+        public InternEntity createIntern(String lastname, String firstname, String phone, String address, String postalcode, String city, String email) {
+            entityManager.getTransaction().begin();
             InternEntity internEntity = new InternEntity();
             internEntity.setLastname(lastname);
             internEntity.setFirstname(firstname);
@@ -25,9 +26,11 @@ public class InternBean {
             internEntity.setCity(city);
             internEntity.setEmail(email);
 
-            entityManager.getTransaction().begin();
             entityManager.persist(internEntity);
             entityManager.getTransaction().commit();
+
+            entityManager.clear();
+            return internEntity;
         }
 
         public Collection<InternEntity> getAllInterns() {

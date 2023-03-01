@@ -13,7 +13,7 @@
     }
 %>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">InternManage</a>
+    <a class="navbar-brand" href="/home">InternManage</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -37,42 +37,93 @@
 
     <div class="mt-5">
         <form action="createIntern" method="post">
-            <div class="row">
-                <div class="form-group col-6">
-                    <label for="lastname">Lastname</label>
-                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Firstname">
+            <div>
+                <h4>Intern :</h4>
+                <div class="row p-3">
+                    <div class="form-group col-6">
+                        <label for="lastname">Lastname</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Firstname" required>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="firstname">Firstname</label>
+                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Firstname" required>
+                    </div>
                 </div>
-                <div class="form-group col-6">
-                    <label for="firstname">Firstname</label>
-                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Firstname">
+
+                <div class="row p-3">
+                    <div class="form-group col-6">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="phoneNumber">Phone number</label>
+                        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Phone number" required>
+                    </div>
+                </div>
+
+                <div class="row p-3">
+                    <div class="form-group col-6">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
+                    </div>
+                    <div class="form-group col-2">
+                        <label for="firstname">Postal Code</label>
+                        <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal code" required>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="mt-4">
+                <h4>Company :</h4>
+                <div class="row p-3">
+                    <div class="form-group col-6">
+                        <label for="lastname">Company</label>
+                        <input type="text" class="form-control" id="company" name="company" placeholder="Company" required>
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="form-group col-6">
+                        <label for="addressCompany">Address</label>
+                        <input type="text" class="form-control" id="addressCompany" name="addressCompany" placeholder="Address" required>
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="cityCompany">City</label>
+                        <input type="text" class="form-control" id="cityCompany" name="cityCompany" placeholder="City" required>
+                    </div>
+                    <div class="form-group col-2">
+                        <label for="postalCodeCompany">Postal Code</label>
+                        <input type="text" class="form-control" id="postalCodeCompany" name="postalCodeCompany" placeholder="Postal code" required>
+                    </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="form-group col-6">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+            <div class="mt-4">
+                <h4>Internship :</h4>
+                <div class="row p-3">
+                    <div class="form-group col-6">
+                        <label for="mission">Mission</label>
+                        <input type="text" class="form-control" id="mission" name="mission" placeholder="Mission" required>
+                    </div>
                 </div>
-                <div class="form-group col-6">
-                    <label for="phoneNumber">Phone number</label>
-                    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Phone number">
+                <div class="row p-3">
+                    <div class="form-group col-6">
+                        <label for="startedDate">Mission</label>
+                        <input type="date" class="form-control" id="startedDate" name="startedDate" placeholder="Started Date" required>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="endedDate">Mission</label>
+                        <input type="date" class="form-control" id="endedDate" name="endedDate" placeholder="Ended Date" required>
+                    </div>
                 </div>
+
             </div>
 
-            <div class="row">
-                <div class="form-group col-6">
-                    <label for="address">Address</label>
-                    <input type="text" class="form-control" id="address" name="address" placeholder="Address">
-                </div>
-                <div class="form-group col-4">
-                    <label for="city">City</label>
-                    <input type="text" class="form-control" id="city" name="city" placeholder="City">
-                </div>
-                <div class="form-group col-2">
-                    <label for="firstname">Postal Code</label>
-                    <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal code">
-                </div>
-            </div>
 
             <div class="text-center mt-2">
                 <button type="submit" class="btn btn-primary">Create</button>
