@@ -53,6 +53,12 @@ public class InternshipBean {
         return (InternshipEntity) query.getSingleResult();
     }
 
+    public InternshipEntity getInternshipByIdIntern(InternEntity intern) {
+        Query query = entityManager.createQuery("select i from InternshipEntity i where i.internByIdIntern = :id");
+        query.setParameter("id", intern);
+        return (InternshipEntity) query.getSingleResult();
+    }
+
 }
 
 

@@ -40,7 +40,7 @@
             <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Groupe</th>
+                <th scope="col">Action</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Prenom</th>
                 <th scope="col">C.d.c</th>
@@ -55,15 +55,22 @@
             <c:forEach items="${interns}" var="intern">
                 <tr>
                     <th scope="row">${intern.internByIdIntern.id}</th>
-                    <td>${intern.internByIdIntern.id}</td>
+                    <td>
+                        <a class="btn btn-primary" href="intern?id=${intern.internByIdIntern.id}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                            </svg>
+                        </a>
+                    </td>
                     <td>${intern.internByIdIntern.lastname}</td>
                     <td>${intern.internByIdIntern.firstname}</td>
-                    <td>${intern.cdc}</td>
-                    <td>${intern.visitSheet}</td>
-                    <td>${intern.evalSheet}</td>
-                    <td>${intern.webSurvey}</td>
-                    <td>${intern.report}</td>
-                    <td>${intern.defense}</td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" value="" id="cdc" <c:if test="${intern.cdc}">checked</c:if>></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" value="" id="visitSheet" <c:if test="${intern.visitSheet}">checked</c:if>></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" value="" id="evalSheet" <c:if test="${intern.evalSheet}">checked</c:if>></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" value="" id="webSurvey" <c:if test="${intern.webSurvey}">checked</c:if>></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" value="" id="report" <c:if test="${intern.report}">checked</c:if>></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" value="" id="defense" <c:if test="${intern.defense}">checked</c:if>></td>
                 </tr>
             </c:forEach>
 
