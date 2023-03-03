@@ -31,10 +31,8 @@ public class InternServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession(false);
         int idIntern = Integer.valueOf(request.getParameter("id"));
-        System.out.println("ID = " + idIntern);
         InternEntity intern = internBean.getInternById(idIntern);
         InternshipEntity internship = internshipBean.getInternshipByIdIntern(intern);
-        System.out.println(intern.getEmail());
         request.setAttribute("intern", intern);
         request.setAttribute("internship", internship);
         request.getRequestDispatcher("/WEB-INF/intern.jsp").forward(request, response);
