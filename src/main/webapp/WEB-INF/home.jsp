@@ -65,12 +65,54 @@
                     </td>
                     <td>${intern.internByIdIntern.lastname}</td>
                     <td>${intern.internByIdIntern.firstname}</td>
-                    <td class="text-center"><input class="form-check-input" type="checkbox" value="" id="cdc" <c:if test="${intern.cdc}">checked</c:if>></td>
-                    <td class="text-center"><input class="form-check-input" type="checkbox" value="" id="visitSheet" <c:if test="${intern.visitSheet}">checked</c:if>></td>
-                    <td class="text-center"><input class="form-check-input" type="checkbox" value="" id="evalSheet" <c:if test="${intern.evalSheet}">checked</c:if>></td>
-                    <td class="text-center"><input class="form-check-input" type="checkbox" value="" id="webSurvey" <c:if test="${intern.webSurvey}">checked</c:if>></td>
-                    <td class="text-center"><input class="form-check-input" type="checkbox" value="" id="report" <c:if test="${intern.report}">checked</c:if>></td>
-                    <td class="text-center"><input class="form-check-input" type="checkbox" value="" id="defense" <c:if test="${intern.defense}">checked</c:if>></td>
+                    <td class="text-center">
+                        <span class="bg-light p-1" style="border-radius: 50px">
+                            <c:choose>
+                                <c:when test="${intern.cdc}">✔️</c:when>
+                                <c:otherwise>❌</c:otherwise>
+                            </c:choose>
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <span class="bg-light p-1" style="border-radius: 50px">
+                            <c:choose>
+                                <c:when test="${intern.visitSheet}">✔️</c:when>
+                                <c:otherwise>❌</c:otherwise>
+                            </c:choose>
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <span class="bg-light p-1" style="border-radius: 50px">
+                            <c:choose>
+                                <c:when test="${intern.evalSheet}">✔️</c:when>
+                                <c:otherwise>❌</c:otherwise>
+                            </c:choose>
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <span class="bg-light p-1" style="border-radius: 50px">
+                            <c:choose>
+                                <c:when test="${intern.webSurvey}">✔️</c:when>
+                                <c:otherwise>❌</c:otherwise>
+                            </c:choose>
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <span class="bg-light p-1" style="border-radius: 50px">
+                            <c:choose>
+                                <c:when test="${intern.report}">✔️</c:when>
+                                <c:otherwise>❌</c:otherwise>
+                            </c:choose>
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <span class="bg-light p-1" style="border-radius: 50px">
+                            <c:choose>
+                                <c:when test="${intern.defense}">✔️</c:when>
+                                <c:otherwise>❌</c:otherwise>
+                            </c:choose>
+                        </span>
+                    </td>
                 </tr>
             </c:forEach>
 
