@@ -56,7 +56,7 @@
 <div class="container-fluid bg-white p-5">
     <h2 class="text-center">Intern informations</h2>
 
-    <div class="mt-4">
+    <div class="mt-2">
         <div style="display: flex;flex-direction: row;gap:40px;">
             <div class="bloc-infos">
                 <div class="div-title-bloc">
@@ -72,11 +72,11 @@
                             <strong class="ml-3">${internship.internByIdIntern.id}</strong>
                         </div>
                         <div class="p-2">
-                            <label>Lastname : </label>
+                            <label>Nom : </label>
                             <strong  class="ml-3">${internship.internByIdIntern.lastname}</strong>
                         </div>
                         <div class="p-2">
-                            <label>Firstname : </label>
+                            <label>Prenom : </label>
                             <strong class="ml-3">${internship.internByIdIntern.firstname}</strong>
                         </div>
                     </div>
@@ -87,37 +87,86 @@
 
             <div class="bloc-infos">
                 <div class="div-title-bloc">
-                    <h4 class="title-bloc">Company</h4>
+                    <h4 class="title-bloc">Entreprise</h4>
                 </div>
                 <div class="mt-3">
-                    <label>Name : </label>
+                    <label>Nom : </label>
                     <strong class="ml-3">${internship.companyByIdCompany.name}</strong>
                 </div>
                 <div class="">
-                    <label>Address : </label>
+                    <label>Adresse : </label>
                     <strong class="ml-3">${internship.companyByIdCompany.address}</strong>
                 </div>
-                <div class="">
-                    <label>Started date : </label>
-                    <strong  class="ml-3">${internship.startedDate}</strong>
-                </div>
-                <div class="">
-                    <label>Ended date : </label>
-                    <strong  class="ml-3">${internship.endedDate}</strong>
-                </div>
-
 
             </div>
         </div>
-        <div>
-            <div class="bloc-infos" style="display: flex;flex-direction: column;width:100%!important;">
+        <div style="display: flex;flex-direction: row;gap:40px;">
+            <div class="bloc-infos" style="display: flex;flex-direction: column;">
                 <div class="div-title-bloc">
-                    <h4 class="title-bloc">Internship</h4>
+                    <h4 class="title-bloc">Stage</h4>
                 </div>
                 <label>Mission : </label>
                 <strong>${internship.mission}</strong>
-                <label class="mt-4">Comments : </label>
-                <strong>....</strong>
+                <div class="mt-2">
+                    <label>Date de début : </label>
+                    <strong  class="ml-3">${internship.startedDate}</strong>
+                </div>
+                <div class="">
+                    <label>Date de fin : </label>
+                    <strong  class="ml-3">${internship.endedDate}</strong>
+                </div>
+            </div>
+            <div class="bloc-infos" style="display: flex;flex-direction: column;">
+                <div class="div-title-bloc">
+                    <h4 class="title-bloc">Actions</h4>
+                </div>
+                <form action="intern" method="post">
+                    <div class="mt-2" style="display: flex;flex-direction: row;gap:40px;">
+                        <input type="hidden" name="idIntern" value="${internship.id}">
+                        <div class="col-4 form-check">
+                            <input type="checkbox" class="form-check-input" name="cdc" <c:if test="${internship.cdc}">checked</c:if>>
+                            <label class="form-check-label" >Cdc</label>
+                        </div>
+                        <div class="col-4 form-check">
+                            <input type="checkbox" class="form-check-input" name="visitSheet" <c:if test="${internship.visitSheet}">checked</c:if>>
+                            <label class="form-check-label" >Fiche visite</label>
+                        </div>
+                        <div class="col-4 form-check">
+                            <input type="checkbox" class="form-check-input" name="evalSheet" <c:if test="${internship.evalSheet}">checked</c:if>>
+                            <label class="form-check-label" >Fiche eval</label>
+                        </div>
+
+                    </div>
+                    <div class="mt-2" style="display: flex;flex-direction: row;gap:40px;">
+                        <div class="col-4 form-check">
+                            <input type="checkbox" class="form-check-input" name="webSurvey" <c:if test="${internship.webSurvey}">checked</c:if>>
+                            <label class="form-check-label" >Sondage web</label>
+                        </div>
+                        <div class="col-4  form-check">
+                            <input type="checkbox" class="form-check-input" name="report" <c:if test="${internship.report}">checked</c:if>>
+                            <label class="form-check-label" >Rapport rendu</label>
+                        </div>
+                        <div class="col-4 form-check">
+                            <input type="checkbox" class="form-check-input" name="defense" <c:if test="${internship.defense}">checked</c:if>>
+                            <label class="form-check-label" >Soutenance</label>
+                        </div>
+                    </div>
+                    <div class="mt-3" style="display: flex;flex-direction: row;">
+                        <div class="col-6">
+                            <label>Note tech</label>
+                            <input type="text" class="form-control" name="noteTech"  placeholder="Entrez une note" value="${internship.noteTech}">
+                        </div>
+                        <div class="col-6">
+                            <label >Note com</label>
+                            <input type="text" class="form-control" name="noteCom"  placeholder="Entrez une note" value="${internship.noteCom}">
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-primary" type="submit">Valider</button>
+                    </div>
+                </form>
+
+
             </div>
 
         </div>

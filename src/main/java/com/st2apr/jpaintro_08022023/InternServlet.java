@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpSession;
 import model.bean.InternBean;
 import model.bean.InternshipBean;
 import model.bean.TutorBean;
+import model.entity.CompanyEntity;
 import model.entity.InternEntity;
 import model.entity.InternshipEntity;
 import model.entity.TutorEntity;
@@ -29,7 +30,6 @@ public class InternServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        HttpSession session = request.getSession(false);
         int idIntern = Integer.valueOf(request.getParameter("id"));
         InternEntity intern = internBean.getInternById(idIntern);
         InternshipEntity internship = internshipBean.getInternshipByIdIntern(intern);
@@ -41,6 +41,19 @@ public class InternServlet extends HttpServlet {
 
     @Override
     public void doPost (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        int idIntern = Integer.valueOf(request.getParameter("idIntern"));
+        boolean cdc = (request.getParameter("cdc") != null);
+        boolean visitSheet = request.getParameter("visitSheet") != null;
+        boolean evalSheet = request.getParameter("evalSheet")!= null;
+        boolean webSurvey = request.getParameter("webSurvey") != null;
+        boolean report = request.getParameter("report") != null;
+        boolean defense = request.getParameter("defense") != null;
+        String noteTech = request.getParameter("noteTech");
+        String noteCom = request.getParameter("noteCom");
+
+        internshipBean.updateInternship(idIntern, cdc,visitSheet,evalSheet,webSurvey,report, defense, noteTech, noteCom);
+
+        response.sendRedirect(request.getContextPath() + "/home");
 
     }
 

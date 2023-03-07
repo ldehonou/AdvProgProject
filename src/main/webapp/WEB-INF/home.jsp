@@ -120,8 +120,7 @@
         </table>
 
         <div class="text-center">
-            <a href="createIntern" class="btn btn-primary">Ajouter</a>
-            <button class="btn btn-warning">Valider</button>
+            <a href="createIntern" class="btn btn-warning">+ Ajouter stagiaire</a>
         </div>
 
     </div>

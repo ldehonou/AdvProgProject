@@ -59,6 +59,24 @@ public class InternshipBean {
         return (InternshipEntity) query.getSingleResult();
     }
 
+    public void updateInternship(int idIntern, boolean cdc,boolean visitSheet,boolean evalSheet,boolean webSurvey,boolean report, boolean defense, String noteTech, String noteCom){
+        Query query = entityManager.createQuery("select i from InternshipEntity i where i.id = :id");
+        query.setParameter("id", idIntern);
+        InternshipEntity internship = (InternshipEntity) query.getSingleResult();
+        entityManager.getTransaction().begin();
+        internship.setCdc(cdc);
+        internship.setVisitSheet(visitSheet);
+        internship.setEvalSheet(evalSheet);
+        internship.setWebSurvey(webSurvey);
+        internship.setReport(report);
+        internship.setDefense(defense);
+        internship.setNoteTech(noteTech);
+        internship.setNoteCom(noteCom);
+        entityManager.merge(internship);
+        entityManager.getTransaction().commit();
+        entityManager.clear();
+    }
+
 }
 
 
