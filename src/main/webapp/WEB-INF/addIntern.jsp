@@ -38,15 +38,15 @@
     <div class="mt-5">
         <form action="createIntern" method="post">
             <div>
-                <h4>Intern :</h4>
+                <h4>Stagiare :</h4>
                 <div class="row p-3">
                     <div class="form-group col-6">
-                        <label for="lastname">Lastname</label>
-                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Firstname" required>
+                        <label for="lastname">Nom</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Nom" required>
                     </div>
                     <div class="form-group col-6">
-                        <label for="firstname">Firstname</label>
-                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Firstname" required>
+                        <label for="firstname">Prenom</label>
+                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Prenom" required>
                     </div>
                 </div>
 
@@ -56,23 +56,23 @@
                         <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                     </div>
                     <div class="form-group col-6">
-                        <label for="phoneNumber">Phone number</label>
-                        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Phone number" required>
+                        <label for="phoneNumber">Telephone</label>
+                        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Telephone" required>
                     </div>
                 </div>
 
                 <div class="row p-3">
                     <div class="form-group col-6">
-                        <label for="address">Address</label>
-                        <input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
+                        <label for="address">Adresse</label>
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Adresse" required>
                     </div>
                     <div class="form-group col-4">
-                        <label for="city">City</label>
-                        <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
+                        <label for="city">Ville</label>
+                        <input type="text" class="form-control" id="city" name="city" placeholder="Ville" required>
                     </div>
                     <div class="form-group col-2">
-                        <label for="firstname">Postal Code</label>
-                        <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal code" required>
+                        <label for="firstname">Code postal</label>
+                        <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Code postal" required>
                     </div>
                 </div>
 
@@ -80,31 +80,31 @@
 
 
             <div class="mt-4">
-                <h4>Company :</h4>
+                <h4>Entreprise :</h4>
                 <div class="row p-3">
                     <div class="form-group col-6">
-                        <label for="lastname">Company</label>
-                        <input type="text" class="form-control" id="company" name="company" placeholder="Company" required>
+                        <label for="lastname">Entreprise</label>
+                        <input type="text" class="form-control" id="company" name="company" placeholder="Entreprise" required>
                     </div>
                 </div>
                 <div class="row p-3">
                     <div class="form-group col-6">
-                        <label for="addressCompany">Address</label>
-                        <input type="text" class="form-control" id="addressCompany" name="addressCompany" placeholder="Address" required>
+                        <label for="addressCompany">Adresse</label>
+                        <input type="text" class="form-control" id="addressCompany" name="addressCompany" placeholder="Adresse" required>
                     </div>
                     <div class="form-group col-4">
-                        <label for="cityCompany">City</label>
-                        <input type="text" class="form-control" id="cityCompany" name="cityCompany" placeholder="City" required>
+                        <label for="cityCompany">Ville</label>
+                        <input type="text" class="form-control" id="cityCompany" name="cityCompany" placeholder="Ville" required>
                     </div>
                     <div class="form-group col-2">
-                        <label for="postalCodeCompany">Postal Code</label>
-                        <input type="text" class="form-control" id="postalCodeCompany" name="postalCodeCompany" placeholder="Postal code" required>
+                        <label for="postalCodeCompany">Code postal</label>
+                        <input type="text" class="form-control" id="postalCodeCompany" name="postalCodeCompany" placeholder="Code postal" required>
                     </div>
                 </div>
             </div>
 
             <div class="mt-4">
-                <h4>Internship :</h4>
+                <h4>Stage :</h4>
                 <div class="row p-3">
                     <div class="form-group col-6">
                         <label for="mission">Mission</label>
@@ -113,11 +113,11 @@
                 </div>
                 <div class="row p-3">
                     <div class="form-group col-6">
-                        <label for="startedDate">Mission</label>
+                        <label for="startedDate">Date de début</label>
                         <input type="date" class="form-control" id="startedDate" name="startedDate" placeholder="Started Date" required>
                     </div>
                     <div class="form-group col-6">
-                        <label for="endedDate">Mission</label>
+                        <label for="endedDate">Date de fin</label>
                         <input type="date" class="form-control" id="endedDate" name="endedDate" placeholder="Ended Date" required>
                     </div>
                 </div>
@@ -126,16 +126,12 @@
 
 
             <div class="text-center mt-2">
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Créer</button>
             </div>
 
         </form>
 
     </div>
-
-
-
-
 
 </div>
 

@@ -54,14 +54,16 @@
 </nav>
 
 <div class="container-fluid bg-white p-5">
-    <div class="d-flex flex-direction-row justify-content-between align-items-center">
-        <div class=""><a href="home"><- Back</a></div>
-        <h2 class="">Stagiaire informations</h2>
-        <div class="">
-            <a class="btn btn-danger" href="removeIntern?id=${internship.internByIdIntern.id}">
-                Supprimer
+    <div>
+        <div class="float-left">
+            <a href="home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+                </svg>
+                Back
             </a>
         </div>
+        <h2 class="text-center">Stagiaire informations</h2>
     </div>
 
 
@@ -116,7 +118,7 @@
                 </div>
                 <label>Mission : </label>
                 <strong>${internship.mission}</strong>
-                <div class="mt-2">
+                <div class="mt-5">
                     <label>Date de début : </label>
                     <strong  class="ml-3">${internship.startedDate}</strong>
                 </div>
