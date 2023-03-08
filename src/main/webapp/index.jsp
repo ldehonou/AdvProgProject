@@ -16,14 +16,14 @@
                     <div class="form-group row">
                         <label  class="col-sm-2 col-form-label">Identifiant</label>
                         <div class="col-sm-7">
-                            <input type="text" class="form-control" name="identifiant" placeholder="Enter identifiant">
+                            <input type="text" class="form-control" name="identifiant" placeholder="Enter identifiant" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label  class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-7">
-                            <input type="password" class="form-control" name="password"  placeholder="Enter password">
+                            <input type="password" class="form-control" name="password"  placeholder="Enter password" required>
                         </div>
                     </div>
 
@@ -32,8 +32,12 @@
                     </div>
 
                 </form>
+                <div class="text-center mt-4">
+                    <span class="text-danger">${error}</span>
+                </div>
             </div>
         </div>
+
     </div>
 
 </div>
