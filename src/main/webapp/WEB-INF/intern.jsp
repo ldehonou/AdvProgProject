@@ -132,7 +132,7 @@
                     <h4 class="title-bloc">Actions</h4>
                 </div>
                 <form action="intern" method="post">
-                    <div class="mt-2" style="display: flex;flex-direction: row;gap:40px;">
+                    <div class="mt-2" style="display: flex;flex-direction: row;gap:10px;">
                         <input type="hidden" name="idIntern" value="${internship.id}">
                         <div class="col-4 form-check">
                             <input type="checkbox" class="form-check-input" name="cdc" <c:if test="${internship.cdc}">checked</c:if>>
@@ -148,7 +148,7 @@
                         </div>
 
                     </div>
-                    <div class="mt-2" style="display: flex;flex-direction: row;gap:40px;">
+                    <div class="mt-2" style="display: flex;flex-direction: row;gap:10px;">
                         <div class="col-4 form-check">
                             <input type="checkbox" class="form-check-input" name="webSurvey" <c:if test="${internship.webSurvey}">checked</c:if>>
                             <label class="form-check-label" >Sondage web</label>

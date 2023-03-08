@@ -39,37 +39,39 @@
         <table class="table table-striped">
             <thead class="thead-dark">
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Action</th>
-                <th scope="col">Nom</th>
-                <th scope="col">Prenom</th>
-                <th scope="col">C.d.c</th>
-                <th scope="col">Fiche visite</th>
-                <th scope="col">Fiche éval</th>
-                <th scope="col">Sondage Web</th>
-                <th scope="col">Rapport rendu</th>
-                <th scope="col">Soutenance</th>
+                <th class="text-center" scope="col">Action</th>
+                <th class="text-center" scope="col">Nom</th>
+                <th class="text-center" scope="col">C.d.c</th>
+                <th class="text-center" scope="col">Fiche visite</th>
+                <th class="text-center" scope="col">Fiche éval</th>
+                <th class="text-center" scope="col">Sondage Web</th>
+                <th class="text-center" scope="col">Rapport rendu</th>
+                <th class="text-center" scope="col">Soutenance</th>
+                <th  class="text-center" scope="col">Debut</th>
+                <th class="text-center" scope="col">Fin</th>
+                <th class="text-center" scope="col">Entr</th>
+                <th class="text-center" scope="col">Adresse</th>
+                <th class="text-center" scope="col">Note Tech</th>
+                <th class="text-center" scope="col">Note Com</th>
             </tr>
             </thead>
             <tbody>
             <c:forEach items="${interns}" var="intern">
-                <tr>
-                    <th scope="row">${intern.internByIdIntern.id}</th>
-                    <td>
+                <tr class="text-center">
+                    <td style="display: flex;flex-direction: column;gap: 5px;">
                         <a class="btn btn-primary btn-sm" href="intern?id=${intern.internByIdIntern.id}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
                                 <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
                             </svg>
                         </a>
-                        <a class="btn btn-danger btn-sm ml-1" href="removeIntern?id=${intern.internByIdIntern.id}">
+                        <a class="btn btn-danger btn-sm" href="removeIntern?id=${intern.internByIdIntern.id}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
                                 <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
                             </svg>
                         </a>
                     </td>
-                    <td>${intern.internByIdIntern.lastname}</td>
-                    <td>${intern.internByIdIntern.firstname}</td>
+                    <td class="text-center">${intern.internByIdIntern.lastname}</td>
                     <td class="text-center">
                         <span class="bg-light p-1" style="border-radius: 50px">
                             <c:choose>
@@ -118,6 +120,12 @@
                             </c:choose>
                         </span>
                     </td>
+                    <td class="text-center">${intern.startedDate}</td>
+                    <td class="text-center">${intern.endedDate}</td>
+                    <td class="text-center">${intern.companyByIdCompany.name}</td>
+                    <td class="text-center">${intern.companyByIdCompany.address}</td>
+                    <td class="text-center font-weight-bold">${intern.noteTech}</td>
+                    <td class="text-center font-weight-bold">${intern.noteCom}</td>
                 </tr>
             </c:forEach>
 
