@@ -38,7 +38,7 @@
     <div class="mt-5">
         <form action="createIntern" method="post">
             <div>
-                <h4>Stagiare :</h4>
+                <h4>Stagiaire :</h4>
                 <div class="row p-3">
                     <div class="form-group col-6">
                         <label for="lastname">Nom</label>
