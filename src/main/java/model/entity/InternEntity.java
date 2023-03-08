@@ -112,7 +112,7 @@ public class InternEntity {
         return Objects.hash(id, lastname, firstname, phone, address, postalcode, city, email);
     }
 
-    @OneToMany(mappedBy = "internByIdIntern")
+    @OneToMany(mappedBy = "internByIdIntern", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     public Collection<InternshipEntity> getInternshipsById() {
         return internshipsById;
     }

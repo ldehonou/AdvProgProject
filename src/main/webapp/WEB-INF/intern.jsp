@@ -54,7 +54,16 @@
 </nav>
 
 <div class="container-fluid bg-white p-5">
-    <h2 class="text-center">Intern informations</h2>
+    <div class="d-flex flex-direction-row justify-content-between align-items-center">
+        <div class=""><a href="home"><- Back</a></div>
+        <h2 class="">Stagiaire informations</h2>
+        <div class="">
+            <a class="btn btn-danger" href="removeIntern?id=${internship.internByIdIntern.id}">
+                Supprimer
+            </a>
+        </div>
+    </div>
+
 
     <div class="mt-2">
         <div style="display: flex;flex-direction: row;gap:40px;">

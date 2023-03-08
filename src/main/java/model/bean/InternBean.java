@@ -43,4 +43,16 @@ public class InternBean {
             query.setParameter("id", id);
             return (InternEntity) query.getSingleResult();
         }
+
+        public void removeIntern(InternEntity intern){
+            entityManager.getTransaction().begin();
+            Query query = entityManager.createQuery("delete from InternshipEntity i where i.internByIdIntern = :id");
+            query.setParameter("id", intern);
+            query.executeUpdate();
+            Query newQuery = entityManager.createQuery("delete from InternEntity i where i.id = :id");
+            newQuery.setParameter("id", intern.getId());
+            newQuery.executeUpdate();
+            entityManager.getTransaction().commit();
+
+        }
 }

@@ -157,7 +157,7 @@ public class InternshipEntity {
         return Objects.hash(id, noteTech, noteCom, mission, cdc, visitSheet, evalSheet, webSurvey, report, defense, startedDate, endedDate);
     }
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "ID_INTERN", referencedColumnName = "ID", nullable = false)
     public InternEntity getInternByIdIntern() {
         return internByIdIntern;
