@@ -71,7 +71,7 @@
         <div style="display: flex;flex-direction: row;gap:40px;">
             <div class="bloc-infos">
                 <div class="div-title-bloc">
-                    <h4 class="title-bloc">Intern</h4>
+                    <h4 class="title-bloc">Stagiaire</h4>
                 </div>
                 <div style="display: flex;align-items: center;gap:45px;">
                     <div>
@@ -108,6 +108,14 @@
                     <label>Adresse : </label>
                     <strong class="ml-3">${internship.companyByIdCompany.address}</strong>
                 </div>
+                <div class="">
+                    <label>Ville : </label>
+                    <strong class="ml-3">${internship.companyByIdCompany.city}</strong>
+                </div>
+                <div class="">
+                    <label>Code Postal : </label>
+                    <strong class="ml-3">${internship.companyByIdCompany.postalcode}</strong>
+                </div>
 
             </div>
         </div>
@@ -122,7 +130,7 @@
                     <label>Date de début : </label>
                     <strong  class="ml-3">${internship.startedDate}</strong>
                 </div>
-                <div class="">
+                <div class="mt-5">
                     <label>Date de fin : </label>
                     <strong  class="ml-3">${internship.endedDate}</strong>
                 </div>
