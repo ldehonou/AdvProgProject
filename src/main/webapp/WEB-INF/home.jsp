@@ -21,8 +21,6 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-
-
         </ul>
         <div class="form-inline my-2 my-lg-0">
             <div class="mr-3 font-weight-bold">${sessionScope.tutor}</div>
@@ -34,9 +32,11 @@
 </nav>
 
     <div class="container-fluid bg-white p-5">
-        <h2 class="text-center mt-2">Hello ${sessionScope.tutor}</h2>
+        <div class="float-right">
+            <input class="form-control" type="text" id="myInput" onkeyup="searchInTable()" placeholder="Search interns...">
+        </div>
 
-        <table class="table table-striped">
+        <table class="table table-striped mt-2" id="myTable">
             <thead class="thead-dark">
             <tr>
                 <th class="text-center" scope="col">Action</th>
@@ -138,6 +138,28 @@
 
     </div>
 
+<script>
+    function searchInTable() {
+        var input, filter, table, tr, td1, td2, i, txtValue1, txtValue2;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
 
+        for (i = 0; i < tr.length; i++) {
+            td1 = tr[i].getElementsByTagName("td")[1];   //column name
+            td2 = tr[i].getElementsByTagName("td")[10];
+            if (td1 && td2) {
+                txtValue1 = td1.textContent || td1.innerText;
+                txtValue2 = td2.textContent || td2.innerText;
+                if (txtValue1.toUpperCase().indexOf(filter) > -1 || txtValue2.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
 </body>
 </html>
