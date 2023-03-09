@@ -25,14 +25,19 @@ public class InternServlet extends HttpServlet {
     InternBean internBean;
     @EJB
     InternshipBean internshipBean;
+    @EJB
+    TutorBean tutorBean;
 
     public void init() {}
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        HttpSession session = request.getSession(false);
+        String emailTutor = session.getAttribute("identifiant").toString();
+        TutorEntity currentTutor = tutorBean.getTutorByEmail(emailTutor);
         int idIntern = Integer.valueOf(request.getParameter("id"));
         InternEntity intern = internBean.getInternById(idIntern);
-        InternshipEntity internship = internshipBean.getInternshipByIdIntern(intern);
+        InternshipEntity internship = internshipBean.getInternshipByIdIntern(intern, currentTutor);
         request.setAttribute("intern", intern);
         request.setAttribute("internship", internship);
         request.getRequestDispatcher("/WEB-INF/intern.jsp").forward(request, response);

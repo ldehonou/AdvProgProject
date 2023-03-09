@@ -23,7 +23,7 @@ public class CompanyBean {
         entityManager.persist(companyEntity);
         entityManager.getTransaction().commit();
 
-        entityManager.close();
+        entityManager.clear();
 
         return companyEntity;
 
